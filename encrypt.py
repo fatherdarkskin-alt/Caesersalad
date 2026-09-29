@@ -1,17 +1,19 @@
 
-precode = input("What do you want your messsgae to be?") 
+precode = input("What do you want your messsgae to be?").strip()
 
 cypher = "abcdefghijklmnopqrstuvwxyz"
 
+postcode= []
 
+precodesimple = precode.lower().replace(' ', '')
 
-for c in precode:
+for c in precodesimple :
 	num = cypher.index(c) 
 	i = num + 6
 	if i > 25:
 		i -=  25
-	post_code = cypher[i] 
-	print(post_code)
+	postcode.append(cypher[i])
+print("".join(postcode))
 
 	# if precode[c] == cypher[n]:
 	# 	cypher.index[+5]
