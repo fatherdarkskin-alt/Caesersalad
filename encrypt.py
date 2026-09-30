@@ -9,9 +9,7 @@ precodesimple = precode.lower().replace(' ', '')
 
 for c in precodesimple :
 	num = cypher.index(c) 
-	i = num + 6
-	if i > 25:
-		i -=  25
+	i = (num + 6) % len(cypher)
 	postcode.append(cypher[i])
 print("".join(postcode))
 
