@@ -1,22 +1,33 @@
 
+choice = input("Do you want to encrypt or decrypt E/D")
 precode = input("What do you want your messsgae to be?").strip()
-
-cypher = "abcdefghijklmnopqrstuvwxyz"
+simplechoice = choice.strip().lower()
+cypher = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 postcode= []
 
-precodesimple = precode.lower().replace(' ', '')
+if choice == "e":
+	for c in precode :
 
-for c in precodesimple :
-	num = cypher.index(c) 
-	i = num + 6
-	if i > 25:
-		i -=  25
-	postcode.append(cypher[i])
-print("".join(postcode))
+		if c not in cypher:
+			postcode.append(c)
+		else:
+			num = cypher.index(c) 
+			i = num + 6
+			if i > 51:
+				i -=  51
+			postcode.append(cypher[i])
+	print("".join(postcode))
 
-	# if precode[c] == cypher[n]:
-	# 	cypher.index[+5]
-	# 	if cypher.index[] > 25:
-	# 		cypher[-25]
+if choice == "d":
+	for c in precode :
 
+		if c not in cypher:
+			postcode.append(c)
+		else:
+			num = cypher.index(c) 
+			i = num - 6
+			if i > 51:
+				i -=  51
+			postcode.append(cypher[i])
+	print("".join(postcode))
